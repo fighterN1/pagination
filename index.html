@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        a{text-decoration: none;}
+        .PageNav{
+            height: 34px;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .PageNav a{
+            display: inline-block;
+            border: 1px solid #dcdcdc;
+            padding: 0 10px;
+            margin: 0 3px;
+            background-color: #ffffff;
+            color:#333;
+            line-height:30px;
+        }
+        .PageNav a.On{
+            color: #ffffff;
+            border: 1px solid #bc1b21;
+            background-color: #bc1b21;
+        }
+    </style>
+</head>
+<body>
+    <!--底部分页-->
+    <div class="PageNav Mt10 NavCtn" id="pa1">
+    </div>
+    <!--底部分页-->
+    <script src="http://hs.3g.cnfol.com/ug/Js/BangDan/pagiNation.js?1"></script>
+    <script>
+        //分页参数
+        var config = {
+            total: 1000,
+            size:10,
+            curIndex:1,
+            callBack:function(t){   
+                loadData(t.curIndex+1);
+            }
+        }
+        // 创建实例
+        var pa1 = new pagination("pa1", config);
+
+        //构建数据
+        function loadData(pageIndex){      
+             
+                console.log(pageIndex);
+        }
+    </script>
+</body>
+</html>
